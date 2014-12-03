@@ -14,7 +14,9 @@
 	<set-property name="mgwt.user.agent" value="mobile"/>
 	<set-property name="mgwt.formfactor" value="phone" />
 	
-	
+	 <replace-with class="test.client.widgets.BProgressIndicatorAppearance">
+    	<when-type-is class="com.googlecode.mgwt.ui.client.widget.progress.ProgressIndicatorAppearance" />
+  	</replace-with>
 
   <!-- Specify the app entry point class.                         -->
   <entry-point class='test.client.Mgwttest'/>

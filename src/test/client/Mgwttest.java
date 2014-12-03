@@ -1,16 +1,17 @@
 package test.client;
 
-import test.client.widgets.BTextBox;
-import test.client.widgets.BWidgetList;
+import test.client.widgets.BProgressIndicator;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.GWT.UncaughtExceptionHandler;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.InlineLabel;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.googlecode.mgwt.ui.client.MGWT;
 import com.googlecode.mgwt.ui.client.MGWTSettings;
 import com.googlecode.mgwt.ui.client.MGWTSettings.ViewPort;
+import com.googlecode.mgwt.ui.client.widget.progress.ProgressIndicator;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -55,25 +56,16 @@ public class Mgwttest implements EntryPoint {
 		
 		// test
 		
-		BWidgetList list = new BWidgetList();
-		list.setRound(false);
 		
-		BTextBox textBox1 = new BTextBox();
-		textBox1.setPlaceHolder("text1");
+		InlineLabel label1 = new InlineLabel("does not work");	
+		ProgressIndicator ind1 = new ProgressIndicator();		// does not work
+		InlineLabel label2 = new InlineLabel("works");	
+		BProgressIndicator ind2 = new BProgressIndicator();     // works
 		
-		BTextBox textBox2 = new BTextBox();
-		textBox2.setPlaceHolder("text2");
-		
-		BTextBox textBox3 = new BTextBox();
-		textBox3.setPlaceHolder("text3");
-		
-		list.add(textBox1);
-		list.add(textBox2);
-		list.add(textBox3);
-		
-		
-		
-		RootPanel.get().add(list);		
+		RootPanel.get().add(label1);
+		RootPanel.get().add(ind1);
+		RootPanel.get().add(label2);
+		RootPanel.get().add(ind2);	
 	}
 	
 	
